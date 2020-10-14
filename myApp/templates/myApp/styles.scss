@@ -1,0 +1,377 @@
+// /* You can add global styles to this file, and also import other style files */
+@import '~@angular/material/theming';
+@import url('//fonts.googleapis.com/icon?family=Material+Icons');
+
+// (optional) Additional themes
+@import '~@covalent/markdown/markdown-theme';
+@import '~@covalent/highlight/highlight-theme';
+
+@include mat-core();
+
+$primary: mat-palette($mat-lime, 500);
+$accent:  mat-palette($mat-lime, 500, A200, A400);
+$warn:    mat-palette($mat-red, 500);
+
+$config: mat-typography-config(
+  $font-family: "roboto, monospace",
+  $headline: mat-typography-level(32px, 48px, 700)
+  );
+
+// Define a custom typography config that overrides the font-family
+// or any typography level.
+// $typography: mat-typography-config(
+  
+// );
+
+
+$theme: mat-light-theme($primary, $accent, $warn);
+
+@include angular-material-theme($theme);
+
+body {
+  font-family: mat-font-family($config);
+  font-weight: normal !important;
+  font-size: 12px !important;
+}
+
+h1, h2, h3, h4 {
+  font-weight: normal;
+}
+
+/* ========= Covalent =========*/
+
+@import '~@covalent/core/theming/all-theme';
+
+// (optional) Additional themes
+// @import '~@covalent/markdown/markdown-theme';
+// @import '~@covalent/highlight/highlight-theme';
+
+
+
+// @include mat-core($typography); 
+
+// // $typography is an **optional** argument for the mat-core
+
+// $primary: mat-palette($mat-orange, 800, 100, 900);
+// $accent:  mat-palette($mat-light-blue, 600, 100, 900);
+
+// $warn:    mat-palette($mat-red, 600, 100, 900);
+
+// $theme: mat-light-theme($primary, $accent, $warn);
+.td-data-table-column{
+  font-size: 12px !important;
+  font-weight: 500;
+  background: #e9f9fc;
+  white-space: nowrap !important; 
+  overflow: hidden; 
+  text-overflow: ellipsis !important;
+  border-right: 2px solid #E4E5E7;
+  border-bottom: 1px solid #E4E5E7;
+ }
+
+ 
+.td-data-table-column-row {
+  height: 46px !important;  
+}
+
+.td-data-table-row {
+  height: 32px !important;
+}
+
+.td-data-table-cell{
+  font-size: 12px !important;
+  border-bottom: 1px solid #E4E5E7 !important;  
+}
+
+.td-data-table-cell .ng-star-inserted {
+  white-space: nowrap !important; 
+  overflow: hidden; 
+  text-overflow: ellipsis !important;
+}
+
+.td-data-table-cell-content-wrapper{
+  padding: 0 12px !important;
+  cursor: pointer;   
+}
+
+.td-data-table-heading{
+  padding: 0 12px !important;
+}
+
+.td-data-table-column-resizer {
+  .td-data-table-column-separator {
+    border-right: 2px solid #AAA7A7;
+    opacity: 0.01;
+  }
+  &:hover, &.td-resizing {
+    .td-data-table-column-separator {
+      opacity: 1;
+    }
+  }
+}
+.app-advance-search-dialog .mat-dialog-container {
+  padding: 0px !important;
+  overflow-x: hidden;
+  overflow-y: auto;
+  height: auto !important;
+  width: 1100px !important;
+}
+
+.td-data-table-scrollable{
+    height: calc(100% - 32px) !important;
+}
+.app-advance-search-dialog .mat-tab-body .mat-tab-body-content{
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+.app-advance-search-dialog .mat-toolbar-row {
+  height: 40px;
+  padding: 0 16px;
+}
+
+.app-advance-search-dialog .mat-form-field-appearance-legacy .mat-form-field-wrapper{
+  padding-bottom: 0.75em;
+}
+
+.app-advance-search-dialog .mat-form-field-infix {
+  padding: 0.5em 0;
+  border-top: 0.64375em solid transparent;
+}
+
+.app-advance-search-dialog .btn-primary{
+  margin: 0px;
+}
+
+.app-advance-search-dialog .mat-form-field-appearance-legacy .mat-form-field-suffix 
+.mat-datepicker-toggle-default-icon{
+  padding-bottom: 6px;
+}
+
+.app-advance-search-dialog .mat-checkbox-inner-container{
+  height: 12px;
+  width: 12px;
+}
+
+.mat-expansion-panel-header{
+  height: 40px !important;
+  background: #F5F7FA;
+  font-size: 14px;
+  font-weight: 500;
+  // border: 1px solid #E5E5E7;
+}
+
+.mat-tab-nav-bar.mat-primary .mat-ink-bar {
+  background-color: #1ba1b8;
+}
+
+.mat-expansion-panel-content {
+  display: flex;
+  flex-direction: column;
+  overflow: visible;
+  background: #fff;
+  font-size: 12px;
+  // border: 1px solid  #E5E5E7;
+}
+
+
+.mat-tab-link {
+  height: 34px !important;
+}
+
+    // ======= Advance-Search-Headers =======
+
+      .header {
+      padding-left: 20px;
+      font-size: 14px;
+      font-weight: 500;
+      flex-grow: .3 !important;
+      margin-top: .45rem;
+    }
+
+    .form-fields{      
+      margin-top: .55rem !important;
+    }
+
+    
+    // ===========Column Settings
+
+   .mat-menu-panel {
+      padding: 12px;  
+      max-width: 156px !important;
+      height: 409px;      
+    }
+
+    .mat-menu-content:not(:empty) {
+      padding-top: 8px;
+      padding-bottom: 8px;
+      display: grid;
+  }
+   
+    // ===========
+ 
+    .mat-dialog-container {
+      border-top-left-radius: 0 !important;
+      border-top-right-radius: 0 !important;
+      height: auto !important;
+    }
+    
+   
+  input:-internal-autofill-selected{
+    background-color: #fff !important;
+  }
+
+  .btn{
+    font: 400 14px roboto !important;
+}
+
+.mat-mini-fab:not([class*='mat-elevation-z']) {
+ box-shadow: none !important;
+ background: black !important;
+ color: white !important; 
+}
+
+// Form Field
+.mat-form-field {
+  font-size: 12px !important;
+  font-weight: 400;
+  line-height: 1;
+}
+ .mat-form-field .mat-input-element {
+  color: #707070;
+}
+ .mat-form-field .mat-form-field-label {
+  color: #707070 !important;
+}
+ .mat-form-field .mat-form-field-underline {
+  background-color: #000;
+}
+ .mat-form-field .mat-form-field-ripple {
+  background-color: #707070;
+}
+ .mat-form-field .mat-form-field-required-marker {
+  color: #707070;
+}
+
+.mat-form-field.mat-focused .mat-input-element {
+  color: #000;
+}
+ .mat-form-field.mat-focused .mat-form-field-label {
+  color: #000 !important;
+}
+ .mat-form-field.mat-focused .mat-form-field-ripple {
+  background-color: #227FBC;
+}
+ .mat-form-field.mat-focused .mat-form-field-required-marker {
+  color: #ff3333;
+}
+ .mat-form-field.mat-focused .mat-input-element {
+  color: #000;
+}
+
+
+.mat-form-field.mat-form-field-invalid .mat-input-element {
+  color: #ff3333;
+}
+ .mat-form-field.mat-form-field-invalid .mat-form-field-label {
+  color: #ff3333!important;
+}
+ .mat-form-field.mat-form-field-invalid .mat-form-field-label .mat-form-field-required-marker {
+  color: #ff3333;
+}
+ .mat-form-field.mat-form-field-invalid .mat-form-field-ripple {
+  background-color: #ff3333;
+}
+input:-webkit-autofill {
+  background-color: #fff !important;
+}
+
+// Check Box
+
+.mat-checkbox .mat-checkbox-frame {
+  border-color: #707070 !important;
+}
+
+ .mat-checkbox-checked .mat-checkbox-background {
+  background-color: #1ba1b8 !important;
+}
+.btn-primary {
+  color: #fff;
+  background-color: #1ba1b8 !important;
+  // background-color: #227FBC;
+  border-color: #1ba1b8 !important;   
+}
+.btn-primary:hover {
+  color: #fff !important;
+  background-color: #1ba1b8 !important;
+  border-color: #1ba1b8 !important;
+}
+
+.btn-primary:not(:disabled):not(.disabled):active {
+  color: #fff;
+  background-color: #168396 !important;
+  border-color: #168396 !important;
+}
+
+.btn-primary.focus, .btn-primary:focus {
+  box-shadow: none !important; 
+}
+.btn.focus, .btn:focus {
+  outline: 0;
+  box-shadow: none !important; 
+}
+
+.mat-nav-list .mat-list-item {
+  cursor: pointer;
+  outline: 0;
+}
+a:hover {
+  color: #1ba1b8 !important;
+  text-decoration: underline;
+}
+
+a:link {
+  color: #707070 !important;
+}
+
+a:visited {
+  color: #000 !important;
+}
+
+a:active {
+  color: #168396 !important;
+}
+
+.mat-icon{
+  cursor: pointer;
+}
+
+.form-group_check_box{
+  margin-bottom: 0.3rem;
+  padding-top: 10px;
+}
+
+.mat-primary .mat-option.mat-selected:not(.mat-option-disabled) {
+  color: #168396;
+}
+.mat-form-field.mat-focused.mat-primary .mat-select-arrow{
+  color: #168396 !important;
+}
+
+.mat-optgroup-label {
+  color: #168396;
+}
+
+.mat-calendar-body-selected {
+  background-color: #168396;
+  color: #fff;
+}
+
+.mat-datepicker-toggle-active {
+  color: #168396;
+}
+
+.Table-icon{
+  width: 32px;
+}
+

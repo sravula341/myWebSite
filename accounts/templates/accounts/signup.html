@@ -1,0 +1,52 @@
+{% extends 'base.html'%}
+
+{% block content %}
+
+
+
+    <h1>Sign Up here</h1>
+    <form method = "POST" action="signup" method = "post">
+        {% csrf_token %}
+       {{form.as_p}}
+
+
+     <input class = "btn btn-primary" type="submit" value ="Sign up">
+         <style>
+        h1{
+        margin:20px auto;
+        font-size:2em;
+        }
+        .article-detail .article p{
+        text-align:center;
+        }
+
+        .site-form{
+        margin-top:60px;
+        padding 20px;
+        }
+        .site-form input, .site-form textarea{
+        display:block;
+        padding 10px;
+        }
+        a.highlight{
+        padding :10px;
+        border-radius: 4px;
+        color: #00dba0;
+        }
+        .helptext, .helptext{
+        margin: 0  auto 20px;
+        color: #bbb;
+        font-size: 0.9em;
+        display:block;
+        }
+
+
+    </style>
+    </form>
+
+
+{% endblock %}
+
+
+
+

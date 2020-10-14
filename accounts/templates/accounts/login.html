@@ -1,0 +1,53 @@
+{% extends 'base.html'%}
+
+{% block content %}
+
+
+<div class = "wrap">
+    <h1>Log In</h1>
+    <form class = "site-form" action="login" method="post" >
+        {% csrf_token %}
+        {{ form }}
+        <a href="{% url 'reset_password' %}">Forgot Password?</a>
+        <br/>
+    <br/><input class = "btn btn-primary" type="submit" value ="Log in">
+
+ <style>
+        h1{
+        margin:20px auto;
+        font-size:2em;
+        }
+        .article-detail .article p{
+        text-align:center;
+        }
+
+        .site-form{
+        margin-top:20px;
+        padding 20px;
+        }
+        .site-form input, .site-form textarea{
+        display:block;
+        padding 10px;
+        }
+        a.highlight{
+        padding :10px;
+        border-radius: 4px;
+        color: #00dba0;
+        }
+        .helptext, .helptext{
+        margin: 0 auto 20px;
+        color: #bbb;
+        font-size: 0.9em;
+        display:block;
+        }
+
+
+    </style>
+
+    </form>
+</div>
+{% endblock %}
+
+
+
+

@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+    <meta content="" name="description">
+    <meta content="Mark Otto, Jacob Thornton, and Bootstrap contributors" name="author">
+    <meta content="Jekyll v4.1.1" name="generator">
+    <title>Album example · Bootstrap</title>
+
+    <link href="https://getbootstrap.com/docs/4.5/examples/album/" rel="canonical">
+
+    <!-- Bootstrap core CSS -->
+    <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+          integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" rel="stylesheet">
+
+    <!-- Favicons -->
+
+    <style>
+      .nav a{
+      width:200px;
+      display:block;
+      text-decoration:none;
+      font-family:Arial;
+      }
+      * {
+      padding: 0;
+      margin : 0;
+      box-sizing: border-box;
+      font-family: Arial;
+      }
+
+      .footer-container {
+      background-color: #212329;
+      padding: 4rm 0 4rm 0;
+      }
+      .footer{
+      width: 80%;
+      height: 40vh;
+      background-color: #212329;
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin: 0 1 2 auto;
+      }
+      .footer-heading{
+      display: flex;
+      flex-direction: column;
+      margin-right; 4rm;
+
+      }
+      .footer-heading h2 {
+      margin-bottom: 2rm;
+      }
+
+      .footer-heading a{
+      color: #fff;
+      color-decoration: none;
+      margin-bottom: 0.5rm;
+      width:70%;
+
+      }
+
+
+
+
+</style>
+
+</head>
+<body>
+<header>
+    <div class = "wrapper">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class = "logo"></div><a href="#"><img src="https://dhs.mymdthink.maryland.gov/blog/wp-content/uploads/MDTHINK-Logo_Final.png" width="150" height="80" alt="" loading="lazy"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+          <div class="navbar-nav ml-auto">
+
+              {% if user.is_authenticated %}
+            <a class="navbar-brand" href="#">MD THINK</a>
+                <a class="nav-item nav-link" href="#">Home</a>
+                <a class="nav-item nav-link" href="#">Contact us</a>
+              <a class="nav-item nav-link" href="javascript:{document.getElementById('logout').submit()}"onclick="">logout</a>
+              <form id ="logout" method="POST" action="{% url 'logout' %}">
+                  {% csrf_token %}
+                  <input type ="hidden"/>
+              </form>
+
+              {% else %}
+               <a class="nav-item nav-link" href="{% url 'signup' %}">Sign Up</a>
+               <a class="nav-item nav-link" href="{% url 'login' %}">Log in</a>
+
+              {% endif %}
+            </div>
+    </nav>
+       </div>
+</header>
+
+
+<main role="main">
+
+    <section class="jumbotron text-center">
+        <div class="container">
+            <h1> Welcome to MD Think</h1>
+            <p class="lead text-muted">Maryland’s Total Human-services Integrated Network (MD THINK) is an innovative,
+                cloud-based platform — allowing multiple State agencies to share and manage data in one convenient
+                place.</p>
+        </div>
+    </section>
+    <section>
+        <div class="container">
+            {% for x in ac %}
+            <div class="row">
+                <div class="col-md-6">
+                     <br/>
+                    <br/>
+                    <br/>
+                    {{x.summary}}
+                    <br/>
+                </div>
+                <div class="col-md-6">
+                    <img height="300" src="{{ x.imagename.url }}" width="500"/>
+                </div>
+            </div>
+            <br/>
+            {% endfor %}
+        </div>
+    </section>
+</main>
+
+
+<div class = "footer-container">
+<div class = "footer">
+<div class = "footer-heading footer-1">
+    <h2>Address</h2>
+ <p>849 International Dr, Linthicum Heights,MD</p>
+        <p>1-800-332-6347 | TTY 1-800-735-2258</p>
+        <p>&copy; 2020 <a href="//www.maryland.gov">Maryland.gov</a></p>
+</div>
+    <div class = "footer-heading footer-2">
+ <h2>Child Support</h2>
+ <a href = "#">About Child Support</a>
+ <a href = "#">Child Support Calculator</a>
+ <a href = "#">Print Application Forms</a>
+ <a href = "#">Mutual Consent for Adoption</a>
+ <a href = "#">Frequently Asked Questions</a>
+ <a href = "#">Paying Support Electronically</a>
+</div>
+
+    <div class = "footer-heading footer-3">
+<h2>Family Investment</h2>
+         <a href = "#">About Family Investment</a>
+        <a href = "#">Am I Eligible for Benefits?</a>
+        <a href = "#">Print Application Forms</a>
+        <a href = "#">Become a Community Partner</a>
+         <a href = "#">Food Pantries/Shelters</a>
+         <a href = "#">Frequently Asked Questions</a>
+        <a href = "#">Find a Local Office</a>
+</div>
+
+    <div class = "footer-heading footer-4">
+<h2>Other Important Links</h2>
+ <a href = "#">Problem Solver</a>
+ <a href = "#">Maryland.gov</a>
+ <a href = "#">Online Services</a>
+ <a href = "#">State Agencies</a>
+ <a href = "#">Phone Directory</a>
+ <a href = "#">Maryland Health Connection</a>
+ <a href = "#">Maryland Community Services Locator</a>
+</div>
+</div>
+
+</body>
+</html>
