@@ -8,7 +8,7 @@ from .models import allCourses
 
 def Courses(request):
     ac = allCourses.objects.all()
-    template = loader.get_template('myApp/courses.html')
+    template = loader.get_template('myApp/Courses.html')
     Context = {
         'ac':ac,
     }
