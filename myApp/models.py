@@ -16,7 +16,7 @@ class allCourses(models.Model):
     def __str__(self):
         return self.coursename
 
-    def was_publixhed_recently(self):
+    def was_published_recently(self):
        return self.startedfrom>=timezone.now()-datetime.timedelta(days=1)
 
 
@@ -27,3 +27,9 @@ class details(models.Model):
 
     def __str__(self):
         return str(self.ct)
+
+
+class ProfileCreate(models.Model):
+    role = models.CharField(max_length=100, default='')
+    email = models.CharField(max_length=500, default='')
+

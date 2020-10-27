@@ -1,10 +1,9 @@
 from django.shortcuts import render,get_object_or_404
 from django.http import HttpResponse, Http404, request
 from django.template import loader
-from .models import allCourses
+from .models import allCourses,details,ProfileCreate
 
 # Create your views here.
-
 
 def Courses(request):
     ac = allCourses.objects.all()

@@ -1,8 +1,22 @@
 from django.shortcuts import render, redirect
-from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
+from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import login, logout
 from . forms import createUserForm
+from django.http import HttpResponse
+from django.template import loader
 
+def homepage(request):
+
+    userid = request.headers['uid']
+    roles = request.headers['role']
+    #make a call to db to get user info
+
+    template = loader.get_template('accounts/homepage.html')
+    Context = {
+        'uid':userid,
+        'role':roles
+    }
+    return HttpResponse(template.render(Context,request))
 
 def signup_view(request):
     if request.method == 'POST':
@@ -16,7 +30,6 @@ def signup_view(request):
     return render(request, 'accounts/signup.html', {'form':form})
 
 def reset_password(request):
-
     return render(request, 'accounts/password_reset.html')
 
 def login_view(request):
@@ -36,4 +49,7 @@ def logout_view(request):
         logout(request)
         return redirect ('login')
     #return render(request,'accounts/logout.html')
+
+
+
 
